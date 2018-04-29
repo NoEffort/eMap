@@ -16,6 +16,7 @@ public class MessageUtil {
 		System.out.println(message);
 	}
 	
+	// Main run() method, 
 	public static void run() {
 		
 		int x;

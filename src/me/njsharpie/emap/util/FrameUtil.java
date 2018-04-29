@@ -7,11 +7,6 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 public class FrameUtil extends Object {
@@ -29,8 +24,8 @@ public class FrameUtil extends Object {
 	public boolean isDown;
 	
 	// Defines the size of the frame
-	public final int WIDTH = 770;
-	public final int HEIGHT = 698;
+	public final int WIDTH = 500;
+	public final int HEIGHT = 500;
 	// Colors!!!
 	Color RED = new Color(229, 0, 0);
 	Color ORANGE = new Color(255, 165, 0);
@@ -141,22 +136,10 @@ public class FrameUtil extends Object {
 		if(page == null) {
 			JFrame frame = new JFrame("eMap");
 		    frame.addWindowListener(new Closer());
-			frame.setSize (WIDTH, HEIGHT);
-			frame.setVisible (true);
-			BufferedImage img;
-			try {
-				img = ImageIO.read(new File("C:\\$data\\eMap.PNG"));
-				int w = img.getWidth(null);
-				int h = img.getHeight(null);
-				BufferedImage bi = new
-				    BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-				page = (Graphics2D) bi.getGraphics();
-				page.drawImage(img, 0, 0, null);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			frame.setSize(WIDTH, HEIGHT);
+			frame.setVisible(true);
 			page = (Graphics2D) frame.getGraphics();
-			frame.paint (page);
+			frame.paint(page);
 		}
 	}
 	
